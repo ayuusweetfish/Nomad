@@ -544,7 +544,7 @@ semantic_escape_chars = ''',│`|:"' ()[]{}<>	#'''
 # program = "/usr/bin/bash"
 # args = ["--login", "-c", '''tmux attach -t "(●'◡'●)" || tmux new -s "(●'◡'●)"''']
 program = "wsl"
-args = ["--", "/usr/bin/bash", "--login", "-c", """'tmux attach -t "(●'"'"'◡'"'"'●)" || tmux -f tmux.conf new -s "(●'"'"'◡'"'"'●)"'"""]
+args = ["--", "/usr/bin/bash", "--login", "-c", """'export NOMAD=$PWD; tmux attach -t "(●'"'"'◡'"'"'●)" || tmux -f tmux.conf new -s "(●'"'"'◡'"'"'●)"'"""]
 
 [window]
 decorations = "full"
