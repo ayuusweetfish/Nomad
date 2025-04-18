@@ -12,4 +12,4 @@ runtime! debian.vim
 :set backspace=2
 :set formatoptions+=m
 :set ttimeoutlen=10
-:set directory^=$NOMAD/.vim/swap//
+:set directory^=$NOMAD/vim/swap//
