@@ -13,3 +13,4 @@ runtime! debian.vim
 :set formatoptions+=m
 :set ttimeoutlen=10
 :set directory^=$NOMAD/vim/swap//
+:set viminfo=""
