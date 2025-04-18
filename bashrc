@@ -1,4 +1,4 @@
-export NOMAD=$PWD
+export NOMAD=$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))
 echo NOMAD=$NOMAD
 export HOME=$NOMAD
 
