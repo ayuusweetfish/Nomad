@@ -3,3 +3,5 @@
 	email = claire@ayu.land
 [core]
 	editor = vim -u $NOMAD/vimrc
+	eol = lf
+	autocrlf = input
