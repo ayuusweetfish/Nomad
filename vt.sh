@@ -16,4 +16,8 @@ if [ "$TERM" = "linux" ]; then
   echo -en "\e]PDB48EAD"
   echo -en "\e]PE9FCCCB"
   echo -en "\e]PFECEFF4"
+  clear
+  tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
+else
+  echo "Not in Linux VT; no-op"
 fi
