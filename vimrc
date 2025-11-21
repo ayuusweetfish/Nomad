@@ -1,5 +1,6 @@
 runtime! debian.vim
 :set t_Co=16
+:colorscheme default
 :syntax on
 :set tabstop=4
 :set softtabstop=2
