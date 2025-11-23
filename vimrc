@@ -13,6 +13,8 @@ runtime! debian.vim
 :set backspace=2
 :set formatoptions+=m
 :set ttimeoutlen=10
-:set directory^=$NOMAD/vim/swap//
+if !isdirectory('/dev/shm/vim/swap')
+  call mkdir('/dev/shm/vim/swap', 'p')
+endif
 :set directory^=/dev/shm/vim/swap//
 :set viminfo=""
