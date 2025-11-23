@@ -54,13 +54,8 @@ key = "Key9"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0002c"
-key = "N"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u0002x"
-key = "W"
+chars = "\u0002k"
+key = "K"
 mods = "Control"
 
 [[keyboard.bindings]]
