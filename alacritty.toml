@@ -4,6 +4,11 @@ key = "F"
 mods = "Control"
 
 [[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Control"
+
+[[keyboard.bindings]]
 chars = "\u00020"
 key = "Key0"
 mods = "Control"
