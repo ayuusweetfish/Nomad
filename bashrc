@@ -30,6 +30,28 @@ if [ "$TERM" = "linux" ]; then
   echo -en "\e]PDB48EAD"
   echo -en "\e]PE9FCCCB"
   echo -en "\e]PFECEFF4"
+  sudo loadkeys <<EOF
+control keycode 2 = F101
+string F101 = "\0021"
+control keycode 3 = F102
+string F102 = "\0022"
+control keycode 4 = F103
+string F103 = "\0023"
+control keycode 5 = F104
+string F104 = "\0024"
+control keycode 6 = F105
+string F105 = "\0025"
+control keycode 7 = F106
+string F106 = "\0026"
+control keycode 8 = F107
+string F107 = "\0027"
+control keycode 9 = F108
+string F108 = "\0028"
+control keycode 10 = F109
+string F109 = "\0029"
+control keycode 11 = F100
+string F100 = "\0020"
+EOF
   clear
   tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
 fi
