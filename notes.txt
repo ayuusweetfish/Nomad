@@ -2,15 +2,22 @@
 
 ### VT
 
-Control Centre: *System → Boot: To CLI*, or `sudo systemctl set-default multi-user.target`.
+Control Centre: *System → Boot: To CLI*, or `sudo systemctl set-default multi-user.target`. (To change back: `graphical.target`)
 
-`$NOMAD/bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows.
+`$NOMAD/bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows. It also attempts to detect the screen size and configure terminal size accordingly.
 
 To select the font globally (taking effect during boot, before login), edit `/etc/default/console-setup`:
 
 ```
 FONTFACE="Terminus"
 FONTSIZE="8x16"
+```
+
+To further adjust screen size & rotation:
+
+```
+fbset -g 800 480 800 480 16   # 800x480 16bpp
+echo 2 | sudo tee /sys/class/graphics/fbcon/rotate  # Upside down
 ```
 
 #### VT / desktop switching

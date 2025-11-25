@@ -52,6 +52,8 @@ string F109 = "\0029"
 control keycode 11 = F100
 string F100 = "\0020"
 EOF
+  read scr_w scr_h <<< $(kmsprint | grep Crtc | perl -ne 'if (/(\d+)x(\d+)@/) { print "$1 $2\n" }')
+  fbset -g $scr_w $scr_h $scr_w $scr_h 16
   clear
   tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
 fi
