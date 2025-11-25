@@ -1,0 +1,34 @@
+## Raspberry Pi
+
+### VT
+
+Control Centre: *System → Boot: To CLI*, or `sudo systemctl set-default multi-user.target`.
+
+`$NOMAD/bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows.
+
+To select the font globally (taking effect during boot, before login), edit `/etc/default/console-setup`:
+
+```
+FONTFACE="Terminus"
+FONTSIZE="8x16"
+```
+
+#### VT / desktop switching
+
+Start desktop environment:
+
+```
+sudo service lightdm start
+```
+
+Press Ctrl-F7/F8 (test to see which works).
+
+Screen resolution is based on global persistent configuration, rather than being auto-detected. To avoid excessively operating the Control Centre GUI, write and reload configuration from the command line:
+
+```
+echo -e 'profile {\n\t\toutput HDMI-A-1 enable scale 1.000000 mode 1920x1080@60.000 position 0,0 transform normal\n}' > ~/.config/kanshi/config && pkill --signal SIGHUP kanshi
+```
+
+See [code for Control Centre's screen configuration plugin](https://github.com/raspberrypi-ui/raindrop/blob/1e80c2f/src/labwc.c).
+
+Might also edit `/etc/xdg/labwc-greeter/config.kanshi` for the log-in screen.
