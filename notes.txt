@@ -39,3 +39,33 @@ echo -e 'profile {\n\t\toutput HDMI-A-1 enable scale 1.000000 mode 1920x1080@60.
 See [code for Control Centre's screen configuration plugin](https://github.com/raspberrypi-ui/raindrop/blob/1e80c2f/src/labwc.c).
 
 Might also edit `/etc/xdg/labwc-greeter/config.kanshi` for the log-in screen.
+
+#### FbTerm
+
+For enhanced display (especially CJK/Unicode characters) as well as input method support. This setup uses Fcitx 5.
+
+```
+apt install fbterm fcitx5-frontend-fbterm
+# Enable raw keystroke capture
+sudo setcap 'cap_sys_tty_configg+ep' /usr/bin/fbterm
+# Ensure current user is in the `video` group
+getent group video
+```
+
+To start an Fcitx daemon:
+
+```
+dbus-launch fcitx5 -d
+# A message is needed to activate daemon?
+dbus-send --session --print-reply --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.State
+```
+
+Run in raw VT:
+
+```
+fbterm -i fcitx5-fbterm --font-names='Source Code Pro' --font-size=24
+```
+
+Ctrl-Space to enable IME. Note that this conflicts with Fcitx's default IME toggle hotkey; edit `~/.config/fcitx5/config` or use `fcitx5-configtool` to add another, maybe `Ctrl+Shift_L`.
+
+FbTerm intercepts Ctrl-Alt-F<n> VT switch hotkeys. Either use Alt/Meta-Left/Right instead, or use Ctrl-Alt-E to exit FbTerm.
