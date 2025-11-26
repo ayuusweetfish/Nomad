@@ -1,6 +1,6 @@
 ## Windows
 
-On Windows, this setup logs into WSL and exposes a terminal through Alacritty. This directory is portable, and can be moved around; all configuration is provided locally with `$HOME` pointing to this directory.
+On Windows, this setup logs into WSL and exposes a terminal through Alacritty. This directory is portable and can be moved around; all configuration is provided locally with `$HOME` pointing to this directory.
 
 ## Raspberry Pi
 
