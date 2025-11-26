@@ -1,4 +1,10 @@
+## Windows
+
+On Windows, this setup logs into WSL and exposes a terminal through Alacritty. This directory is portable, and can be moved around; all configuration is provided locally with `$HOME` pointing to this directory.
+
 ## Raspberry Pi
+
+In addition to a few dotfiles, a few more aspects are tailored for a compact general-use environment. Many of them are functional on / can be adapted to general Linux systems as well.
 
 ### VT
 
