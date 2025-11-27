@@ -61,7 +61,7 @@ mods = "Control"
 [[keyboard.bindings]]
 chars = "\u0002k"
 key = "K"
-mods = "Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 chars = "\u0002\u001B[A"
