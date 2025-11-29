@@ -57,7 +57,7 @@ EOF
   if [ "$scr_h" -gt 500 ]; then
     setfont $NOMAD/Terminus16.psf -d
   else
-    setfont $NOMAD/Terminus16.psf
+    setfont $NOMAD/Terminus16.psf -h17
   fi
   clear
   tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
