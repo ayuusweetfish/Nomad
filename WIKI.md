@@ -34,7 +34,7 @@ Start desktop environment:
 sudo service lightdm start
 ```
 
-Press Ctrl-F7/F8 (test to see which works).
+Press Ctrl-F7 (may be at F8, if the login greeter is enabled; edit /etc/lightdm/lightdm.conf to add `autologin-user`).
 
 Screen resolution is based on global persistent configuration, rather than being auto-detected. To avoid excessively operating the Control Centre GUI, write and reload configuration from the command line:
 
@@ -74,4 +74,4 @@ fbterm -i fcitx5-fbterm --font-names='Source Code Pro' --font-size=24
 
 Ctrl-Space to enable IME. Note that this conflicts with Fcitx's default IME toggle hotkey; edit `~/.config/fcitx5/config` or use `fcitx5-configtool` to add another, maybe `Ctrl+Shift_L`.
 
-FbTerm intercepts Ctrl-Alt-F<n> VT switch hotkeys. Either use Alt/Meta-Left/Right instead, or use Ctrl-Alt-E to exit FbTerm.
+FbTerm intercepts Ctrl-Alt-F\<n\> VT switch hotkeys. Either use Alt/Meta-Left/Right instead, or use Ctrl-Alt-E to exit FbTerm.
