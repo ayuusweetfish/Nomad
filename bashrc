@@ -51,6 +51,23 @@ control keycode 10 = F109
 string F109 = "\0029"
 control keycode 11 = F100
 string F100 = "\0020"
+
+alt keycode 103 = F110
+string F110 = "\033[1;3A"
+alt keycode 108 = F111
+string F111 = "\033[1;3B"
+alt keycode 106 = F112
+string F112 = "\033[1;3C"
+alt keycode 105 = F113
+string F113 = "\033[1;3D"
+control shift keycode 103 = F114
+string F114 = "\002\033[1;5A"
+control shift keycode 108 = F115
+string F115 = "\002\033[1;5B"
+control shift keycode 106 = F116
+string F116 = "\002\033[1;5C"
+control shift keycode 105 = F117
+string F117 = "\002\033[1;5D"
 EOF
   read scr_w scr_h <<< $(fbset -i -fb $(con2fbmap $(fgconsole) | perl -ne 'if (/framebuffer (\d+)/) { print "/dev/fb$1" }') | perl -ne 'if (/mode "(\d+)x(\d+)"/) { print "$1 $2\n" }')
   if [ "$scr_h" -gt 500 ]; then
