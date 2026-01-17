@@ -541,10 +541,10 @@ multiplier = 5
 semantic_escape_chars = ''',│`|:"' ()[]{}<>	#'''
 
 [terminal.shell]
-program = "/usr/bin/bash"
+program = "/bin/bash"
 args = ["--login", "-c", '''tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"''']
 # program = "wsl"
-# args = ["--", "/usr/bin/bash", "--login", "-c", """'export NOMAD=$PWD; tmux attach -t "(●'"'"'◡'"'"'●)" || tmux -f tmux.conf new -s "(●'"'"'◡'"'"'●)"'"""]
+# args = ["--", "/usr/bash", "--login", "-c", """'export NOMAD=$PWD; tmux attach -t "(●'"'"'◡'"'"'●)" || tmux -f tmux.conf new -s "(●'"'"'◡'"'"'●)"'"""]
 
 [window]
 decorations = "full"
