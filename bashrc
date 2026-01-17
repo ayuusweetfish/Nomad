@@ -9,7 +9,7 @@ shopt -s histappend
 HISTFILE=$NOMAD/bash_history
 HISTSIZE=1000000
 HISTFILESIZE=200000000
-HISTFORMAT="%F %T "
+HISTTIMEFORMAT="%F %T "
 
 alias vim="vim -u $NOMAD/vimrc"
 
