@@ -1,5 +1,6 @@
 runtime! debian.vim
 :set nocompatible
+:set noshowcmd
 :set t_Co=16
 :colorscheme default
 :syntax on
