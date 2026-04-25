@@ -80,3 +80,7 @@ EOF
   clear
   tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
 fi
+
+if ! shopt -oq posix; then
+  . /usr/share/bash-completion/bash_completion
+fi
