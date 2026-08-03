@@ -83,3 +83,7 @@ fbterm -i fcitx5-fbterm --font-names='Source Code Pro' --font-size=24
 Ctrl-Space to enable IME. Note that this conflicts with Fcitx's default IME toggle hotkey; edit `~/.config/fcitx5/config` or use `fcitx5-configtool` to add another, maybe `Ctrl+Shift_L`.
 
 FbTerm intercepts Ctrl-Alt-F\<n\> VT switch hotkeys. Either use Alt/Meta-Left/Right instead, or use Ctrl-Alt-E to exit FbTerm.
+
+### Termux
+
+This setup works with Alpine under Termux. Use `ATTACH_TMUX=1 /bin/bash --login` (instead of the original `/bin/sh --login`) to log in. Write `. ~/.bashrc` in `.bash_profile`, or add `--init-file /home/.bashrc` to the log in shell parameters.

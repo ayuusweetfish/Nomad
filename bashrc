@@ -87,9 +87,14 @@ EOF
     setfont $NOMAD/Terminus16.psf -h17
   fi
   clear
-  tmux attach -t "(●'◡'●)" || tmux -f $NOMAD/tmux.conf new -s "(●'◡'●)"
 fi
 
-if ! shopt -oq posix; then
+if [ "$TERM" = "linux" ] || [ -n "$ATTACH_TMUX" ]; then
+  unset ATTACH_TMUX
+  tmux attach -t "(●'◡'●)" || tmux -f $NOMAD/tmux.conf new -s "(●'◡'●)"
+  [ $? -eq 0 ] && exit
+fi
+
+if ! shopt -oq posix && [ -e /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
 fi
