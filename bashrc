@@ -21,9 +21,8 @@ HISTSIZE=1000000
 HISTFILESIZE=200000000
 HISTTIMEFORMAT="%F %T "
 
-if $FULLY_PORTABLE; then
-  alias vim="vim -u $NOMAD/vimrc"
-fi
+export VIMINIT="source $NOMAD/vimrc"
+alias vim="vim -u $NOMAD/vimrc"
 
 if [ "$TERM" = "linux" ]; then
   echo -en "\e]P03B4252"
@@ -88,7 +87,7 @@ EOF
     setfont $NOMAD/Terminus16.psf -h17
   fi
   clear
-  tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"
+  tmux attach -t "(●'◡'●)" || tmux -f $NOMAD/tmux.conf new -s "(●'◡'●)"
 fi
 
 if ! shopt -oq posix; then

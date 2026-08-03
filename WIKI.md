@@ -1,16 +1,26 @@
 ## Windows
 
-On Windows, this setup logs into WSL and exposes a terminal through Alacritty. This directory is portable and can be moved around; all configuration is provided locally with `$HOME` pointing to this directory.
+On Windows, set `FULLY_PORTABLE=true` at the first line in `bashrc`.
 
-## Raspberry Pi
+Install WSL and use `Alacritty-v0.15.1-portable.bat` to launch. This setup logs into WSL and exposes a terminal through Alacritty. This directory is portable and can be moved around; all configuration is provided locally with `$HOME` pointing to this directory.
 
-In addition to a few dotfiles, a few more aspects are tailored for a compact general-use environment. Many of them are functional on / can be adapted to general Linux systems as well.
+## Unix-like
+
+On Unix-like systems, `FULLY_PORTABLE=false` is also possible for a system-integrated setup. Place this directory at `~/nomad` and create the following links:
+
+```
+ln -s ~/nomad/bashrc ~/.bashrc
+ln -s ~/nomad/alacritty.toml ~/.alacritty.toml
+ln -s ~/nomad/.gitconfig ~/.gitconfig
+```
+
+In the Linux VT, a consistent font and a set of compatible hotkeys are also set up.
 
 ### VT
 
-Control Centre: *System → Boot: To CLI*, or `sudo systemctl set-default multi-user.target`. (To change back: `graphical.target`)
+`sudo systemctl set-default multi-user.target`; to change back: `graphical.target`. For Raspberry Pi, option also available in Control Centre: *System → Boot: To CLI*,
 
-`$NOMAD/bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows. It also attempts to detect the screen size and configure terminal size accordingly.
+`bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows. It also attempts to detect the screen size and configure terminal size accordingly.
 
 To select the font globally (taking effect during boot, before login), edit `/etc/default/console-setup`:
 
@@ -26,7 +36,7 @@ fbset -g 800 480 800 480 16   # 800x480 16bpp
 echo 2 | sudo tee /sys/class/graphics/fbcon/rotate  # Upside down
 ```
 
-#### VT / desktop switching
+### Raspberry Pi: VT / desktop switching
 
 Start desktop environment:
 
@@ -46,7 +56,7 @@ See [code for Control Centre's screen configuration plugin](https://github.com/r
 
 Might also edit `/etc/xdg/labwc-greeter/config.kanshi` for the log-in screen.
 
-#### FbTerm
+### FbTerm
 
 For enhanced display (especially CJK/Unicode characters) as well as input method support. This setup uses Fcitx 5.
 
