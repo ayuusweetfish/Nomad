@@ -517,6 +517,7 @@ foreground = "0xD8DEE9"
 
 [env]
 TERM = "xterm-256color"
+ATTACH_TMUX = "1"
 
 [font]
 size = 12.0
@@ -542,9 +543,9 @@ semantic_escape_chars = ''',│`|:"' ()[]{}<>	#'''
 
 [terminal.shell]
 program = "/bin/bash"
-args = ["--login", "-c", '''tmux attach -t "(●'◡'●)" || tmux -f $HOME/nomad/tmux.conf new -s "(●'◡'●)"''']
+args = ["--login"]
 # program = "wsl"
-# args = ["--", "/usr/bash", "--login", "-c", """'export NOMAD=$PWD; tmux attach -t "(●'"'"'◡'"'"'●)" || tmux -f tmux.conf new -s "(●'"'"'◡'"'"'●)"'"""]
+# args = ["--", "/usr/bash", "--login"]
 
 [window]
 decorations = "full"
