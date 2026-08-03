@@ -14,13 +14,11 @@ ln -s ~/nomad/alacritty.toml ~/.alacritty.toml
 ln -s ~/nomad/.gitconfig ~/.gitconfig
 ```
 
-In the Linux VT, a consistent font and a set of compatible hotkeys are also set up.
-
 ### VT
 
-`sudo systemctl set-default multi-user.target`; to change back: `graphical.target`. For Raspberry Pi, option also available in Control Centre: *System → Boot: To CLI*,
-
 `bashrc` sets up the palette, attaches to tmux, and sets up Ctrl-number shortcuts for switching tmux windows. It also attempts to detect the screen size and configure terminal size accordingly.
+
+To boot to the VT, set `sudo systemctl set-default multi-user.target`; to change back: `graphical.target`. For Raspberry Pi, option also available in Control Centre: *System → Boot: To CLI*,
 
 To select the font globally (taking effect during boot, before login), edit `/etc/default/console-setup`:
 
