@@ -1,6 +1,12 @@
-export NOMAD=${NOMAD:-$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))}
-echo NOMAD=$NOMAD
-export HOME=$NOMAD
+FULLY_PORTABLE=false
+
+if $FULLY_PORTABLE; then
+  export NOMAD=${NOMAD:-$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))}
+  echo NOMAD=$NOMAD
+  export HOME=$NOMAD
+else
+  export NOMAD=~/nomad
+fi
 
 if [[ $- == *i* ]]; then export LC_ALL=C.UTF-8; fi
 export EDITOR=vim
@@ -8,12 +14,16 @@ export PS1='\[\033[0;32m\]\u\[\033[m\]:\[\033[34m\]\W\[\033[m\]\[\033[33m\]♪\[
 
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
-HISTFILE=$NOMAD/bash_history
+if $FULLY_PORTABLE; then
+  HISTFILE=$NOMAD/bash_history
+fi
 HISTSIZE=1000000
 HISTFILESIZE=200000000
 HISTTIMEFORMAT="%F %T "
 
-alias vim="vim -u $NOMAD/vimrc"
+if $FULLY_PORTABLE; then
+  alias vim="vim -u $NOMAD/vimrc"
+fi
 
 if [ "$TERM" = "linux" ]; then
   echo -en "\e]P03B4252"
