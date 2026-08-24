@@ -10,9 +10,11 @@ runtime! debian.vim
 :set expandtab
 :set autoindent
 :set smartindent
-:set ruler
-:set list listchars=tab:\ \ 
+:set list listchars=tab:»\ 
 :set backspace=2
+autocmd BufReadPost *
+  \ if search("^\t", "nw") | setlocal softtabstop=4 shiftwidth=4 noexpandtab | endif
+:set ruler
 :set formatoptions+=m
 :set ttimeoutlen=10
 if !isdirectory('/tmp/vim/swap')
