@@ -91,8 +91,14 @@ fi
 
 if [ "$TERM" = "linux" ] || [ -n "$ATTACH_TMUX" ]; then
   unset ATTACH_TMUX
-  tmux attach -t "(●'◡'●)" || tmux -f $NOMAD/tmux.conf new -s "(●'◡'●)"
-  [ $? -eq 0 ] && exit
+  while true; do
+    tmux attach -t "(●'◡'●)" || tmux -f $NOMAD/tmux.conf new -s "(●'◡'●)"
+    if [ $? -eq 0 ]; then
+      tmux has-session -t "(●'◡'●)" && break
+      [ "$TERM" = "linux" ] || exit
+    fi
+    sleep 0.02
+  done
 fi
 
 if ! shopt -oq posix && [ -e /usr/share/bash-completion/bash_completion ]; then
