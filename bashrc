@@ -1,7 +1,7 @@
 FULLY_PORTABLE=false
 
 if $FULLY_PORTABLE; then
-  export NOMAD=${NOMAD:-$(readlink -f $(dirname -- "${BASH_SOURCE[0]}"))}
+  export NOMAD=${NOMAD:-$(dirname -- $(readlink -f "${BASH_SOURCE[0]}"))}
   echo NOMAD=$NOMAD
   export HOME=$NOMAD
 else
