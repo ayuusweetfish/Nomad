@@ -545,7 +545,7 @@ semantic_escape_chars = ''',│`|:"' ()[]{}<>	#'''
 program = "/bin/bash"
 args = ["--login"]
 # program = "wsl"
-# args = ["--", "/usr/bash", "--login"]
+# args = ["--", "/bin/bash", "--login"]
 
 [window]
 decorations = "full"
