@@ -1,6 +1,6 @@
 [user]
 	name = Ayu
-	email = claire@ayu.land
+	email = a@ayu.land
 [core]
 	editor = vim -u $NOMAD/vimrc
 	eol = lf
